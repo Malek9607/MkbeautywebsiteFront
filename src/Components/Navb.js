@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../redux/Actions/UserActions';
 import { Nav, Navbar, Container, Form, FormControl, Button } from 'react-bootstrap';
 import logo from './images/Logo.png';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { buyProduct } from '../redux/Actions/ProductActions';
 
 function Navb({ search, setSearch }) {  // Accepter search et setSearch en props
