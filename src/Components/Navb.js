@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../redux/Actions/UserActions';
 import { Nav, Navbar, Container, Form, FormControl, Button } from 'react-bootstrap';
 import logo from './images/Logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { buyProduct } from '../redux/Actions/ProductActions';
 
@@ -63,21 +62,7 @@ function Navb({ search, setSearch }) {  // Accepter search et setSearch en props
         
 
             <Nav.Link as={Link} to="/BuyProduct" style={{ color: '#333', position: 'relative' }}>
-              <FontAwesomeIcon icon={faShoppingCart} size="lg" />
-              {cartItems.length > 0 && (
-                <span style={{
-                  position: 'absolute',
-                  top: '-5px',
-                  right: '-10px',
-                  backgroundColor: 'red',
-                  color: 'white',
-                  borderRadius: '50%',
-                  padding: '2px 6px',
-                  fontSize: '12px',
-                }}>
-                  {cartItems.length}
-                </span>
-              )}
+            panier
             </Nav.Link>
 
             {user ? (
