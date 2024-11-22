@@ -1,0 +1,128 @@
+/* Conteneur de la grille pour les cartes produits */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colonnes automatiques */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style des cartes produits */
+.product-card {
+    width: 100%;
+    min-height: 400px; /* Hauteur minimale uniforme */
+    display: flex;
+    flex-direction: column; /* Aligne les enfants verticalement */
+    justify-content: space-between; /* Espace entre les sections */
+    padding: 15px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Effet au survol de la carte */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Conteneur de l'image produit */
+.product-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* Image produit */
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Zoom sur l'image au survol */
+.product-card:hover .product-image {
+    transform: scale(1.2);
+}
+
+/* Détails du produit */
+.product-details {
+    margin-bottom: 15px;
+    flex-grow: 1; /* Pousse cette section pour occuper l'espace restant */
+}
+
+.product-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Actions des cartes */
+.product-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.product-actions button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-actions button:hover {
+    transform: scale(1.1);
+}
+
+/* Compteur de quantité */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quantity-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    width: 40px;
+    text-align: center;
+}
+
+/* Adaptabilité */
+@media (max-width: 1024px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-container {
+        grid-template-columns: 1fr; /* 1 colonne sur mobile */
+    }
+}
